@@ -1,13 +1,13 @@
-package com.bas.rcook.checkstyletest;
+package com.bas.rcook.checkstyletest.testPackage;
 
 /**
  *  Checkstyle Example:
  *
  *  Uncomment line below to throw an error for the checkstyle task to find
  */
-//import android.app.ActionBar;
+import android.app.ActionBar;
 
-public class TestClass {
+public class SubClass {
 
     public void doNothing()
     {
