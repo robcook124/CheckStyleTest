@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 /**
- *  FindBugs Example:
+ *  FindBugs and PMD Example:
  *
  *  Uncomment code block to throw an error for the findbugs task to find
+ *  Uncomment code block to throw an error for the pmd task to find
  */
         /*String aString = "bob";
         aString.replace('b', 'p');
