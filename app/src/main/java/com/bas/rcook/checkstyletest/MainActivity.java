@@ -5,7 +5,7 @@ package com.bas.rcook.checkstyletest;
  *
  *  Uncomment line below to throw an error for the checkstyle task to find
  */
-//import android.app.ActionBar;
+import android.app.ActionBar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
  *
  *  Uncomment code block to throw an error for the findbugs task to find
  */
-        /*String aString = "bob";
+        String aString = "bob";
         aString.replace('b', 'p');
-        if(aString.equals("pop"));*/
+        if(aString.equals("pop"));
     }
 
     @Override

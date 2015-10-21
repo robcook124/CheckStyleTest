@@ -2,9 +2,10 @@ apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 
-check.dependsOn 'checkstyle', 'findbugs'
+check.dependsOn 'checkstyle', 'findbugs', 'pmd'
 
 task checkstyle(type: Checkstyle) {
+    ignoreFailures = true
     configFile file("${project.rootDir}/config/quality/checkstyle/checkstyle.xml")
     source 'src'
     include '**/*.java'
@@ -13,7 +14,7 @@ task checkstyle(type: Checkstyle) {
 }
 
 task findbugs(type: FindBugs) {
-    ignoreFailures = false
+    ignoreFailures = true
     effort = "max"
     reportLevel = "high"
     excludeFilter = new File("${project.rootDir}/config/quality/findbugs/findbugs.xml")
@@ -26,13 +27,28 @@ task findbugs(type: FindBugs) {
     reports {
         xml.enabled = false
         html.enabled = true
-        xml {
-            destination "$project.buildDir/reports/findbugs/findbugs.xml"
-        }
         html {
             destination "$project.buildDir/reports/findbugs/findbugs.html"
         }
     }
 
     classpath = files()
+}
+
+task pmd(type: Pmd) {
+    ignoreFailures = true
+    ruleSetFiles = files("${project.rootDir}/config/quality/pmd/pmd.xml")
+    //ruleSets = []
+
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html {
+            destination "$project.buildDir/reports/pmd/pmd.html"
+        }
+    }
 }
