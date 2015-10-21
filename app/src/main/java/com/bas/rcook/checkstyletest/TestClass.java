@@ -1,9 +1,11 @@
 package com.bas.rcook.checkstyletest;
 
-import android.app.ActionBar;
-
 /**
- * Created by rcook on 10/21/2015.
+ *  Checkstyle Example:
+ *
+ *  Uncomment line below to throw an error for the checkstyle task to find
  */
+//import android.app.ActionBar;
+
 public class TestClass {
 }

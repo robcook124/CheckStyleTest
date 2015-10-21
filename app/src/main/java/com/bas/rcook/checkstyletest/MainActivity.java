@@ -1,6 +1,11 @@
 package com.bas.rcook.checkstyletest;
 
-import android.app.ActionBar;
+/**
+ *  Checkstyle Example:
+ *
+ *  Uncomment line below to throw an error for the checkstyle task to find
+ */
+//import android.app.ActionBar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+/**
+ *  FindBugs Example:
+ *
+ *  Uncomment code block to throw an error for the findbugs task to find
+ */
+        /*String aString = "bob";
+        aString.replace('b', 'p');
+        if(aString.equals("pop"));*/
     }
 
     @Override
